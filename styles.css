@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700;800&display=swap&subset=latin-ext');
 
 html {
     scroll-behavior: smooth;
@@ -10,23 +10,23 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #050510;
+    background: #020617;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1f1f3a;
+    background: #1e293b;
     border-radius: 5px;
-    border: 2px solid #050510;
+    border: 2px solid #020617;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #00f3ff;
+    background: #06b6d4;
 }
 
 /* Typewriter / Gradient Text Animation */
 .type-writer {
     background-size: 200% auto;
-    animation: gradient-flow 5s linear infinite;
+    animation: gradient-flow 8s ease infinite;
 }
 
 @keyframes gradient-flow {
@@ -51,9 +51,12 @@ html {
 
 /* Floating Animation */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Range Slider Styling */
@@ -62,24 +65,27 @@ input[type=range] {
     background: transparent;
 }
 
+/* Webkit Thumb */
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #00f3ff;
+    background: #06b6d4;
     cursor: pointer;
     margin-top: -8px;
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
-    transition: transform 0.1s;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.4); /* Softer shadow */
+    transition: all 0.2s ease;
+    border: 2px solid #020617;
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-    background: #bc13fe;
-    box-shadow: 0 0 15px rgba(188, 19, 254, 0.7);
+    transform: scale(1.1);
+    background: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
 }
 
+/* Webkit Track */
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
@@ -88,17 +94,25 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 2px;
 }
 
-/* Firefox support for range slider */
+/* Firefox Thumb */
 input[type=range]::-moz-range-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #00f3ff;
+    background: #06b6d4;
     cursor: pointer;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+    border: 2px solid #020617;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+    transition: all 0.2s ease;
 }
 
+input[type=range]::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    background: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Firefox Track */
 input[type=range]::-moz-range-track {
     width: 100%;
     height: 4px;
@@ -109,7 +123,8 @@ input[type=range]::-moz-range-track {
 
 /* Navbar scroll effect class (added via JS) */
 .nav-scrolled {
-    background: rgba(5, 5, 16, 0.9) !important;
-    border-bottom: 1px solid rgba(0, 243, 255, 0.2) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    background: rgba(2, 6, 23, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
