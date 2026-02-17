@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro LeaseKredit - Financování budoucnosti 2026</title>
+    <meta name="description" content="Moderní leasing a úvěry pro rok 2026. Financování nové generace pro tahače, nákladní vozy a stroje.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN for simplicity without build step) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-blue': '#00f3ff',
+                        'neon-purple': '#bc13fe',
+                        'dark-bg': '#050510',
+                        'glass-bg': 'rgba(255, 255, 255, 0.05)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased overflow-x-hidden selection:bg-neon-blue selection:text-black">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-neon-purple/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-neon-blue/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-orbitron font-bold tracking-wider text-white">
+                PRO<span class="text-neon-blue">LEASE</span>KREDIT
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#sluzby" class="hover:text-neon-blue transition-colors text-sm uppercase tracking-widest">Služby</a>
+                <a href="#kalkulacka" class="hover:text-neon-blue transition-colors text-sm uppercase tracking-widest">Kalkulačka</a>
+                <a href="#postup" class="hover:text-neon-blue transition-colors text-sm uppercase tracking-widest">Postup</a>
+                <a href="#kontakt" class="hover:text-neon-blue transition-colors text-sm uppercase tracking-widest">Kontakt</a>
+                <a href="#kontakt" class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-6 py-2 rounded-full font-bold hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all transform hover:scale-105">
+                    Chci nabídku <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 animate-fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-neon-blue text-xs font-bold tracking-widest uppercase mb-4">
+                    <span class="w-2 h-2 rounded-full bg-neon-blue inline-block mr-2 animate-pulse"></span>
+                    Připraveno pro rok 2026
+                </span>
+                <h1 class="text-5xl md:text-7xl font-orbitron font-black leading-tight">
+                    Financování <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple type-writer">nové generace</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-lg leading-relaxed">
+                    Získejte leasing nebo úvěr na auta, stroje a techniku rychleji než kdy dřív. Smart approval, digitální podpis, okamžité čerpání.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#kalkulacka" class="group relative px-8 py-4 bg-neon-blue text-black font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(0,243,255,0.6)]">
+                        <span class="relative z-10">Spočítat splátku</span>
+                        <div class="absolute inset-0 h-full w-full scale-0 rounded-lg transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                    </a>
+                    <a href="#sluzby" class="px-8 py-4 border border-white/20 rounded-lg font-bold hover:bg-white/5 transition-all hover:border-neon-purple hover:text-neon-purple">
+                        Prohlédnout služby
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-2xl font-bold font-orbitron text-white">24h</div>
+                        <div class="text-xs text-gray-500 uppercase">Schválení do</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-orbitron text-white">100%</div>
+                        <div class="text-xs text-gray-500 uppercase">Bezpečnost</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-orbitron text-white">TOP</div>
+                        <div class="text-xs text-gray-500 uppercase">Podmínky</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative hidden md:block">
+                <!-- 3D/Abstract Visual Placeholder using CSS/SVG -->
+                <div class="relative w-full aspect-square bg-gradient-to-br from-white/5 to-transparent rounded-3xl border border-white/10 backdrop-blur-xl p-8 transform rotate-3 hover:rotate-0 transition-all duration-700 shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-neon-purple/20 to-transparent rounded-3xl"></div>
+
+                    <!-- Dashboard Mockup -->
+                    <div class="h-full w-full bg-dark-bg/80 rounded-2xl border border-white/10 p-6 flex flex-col justify-between overflow-hidden relative">
+                         <!-- Decorative elements inside mockup -->
+                         <div class="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center mb-6">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                         </div>
+                         <div class="space-y-3">
+                             <div class="h-4 w-3/4 bg-white/10 rounded animate-pulse"></div>
+                             <div class="h-4 w-1/2 bg-white/10 rounded animate-pulse delay-75"></div>
+                         </div>
+                         <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/5 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs text-gray-400">Měsíční splátka</div>
+                                <div class="text-xl font-orbitron text-neon-blue">12,778 Kč</div>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-neon-blue flex items-center justify-center">
+                                <i class="fas fa-check text-neon-blue text-xs"></i>
+                            </div>
+                         </div>
+
+                         <!-- Abstract circles -->
+                         <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-neon-purple/30 rounded-full blur-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="sluzby" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-orbitron font-bold mb-4">S čím Vám <span class="text-neon-blue">pomůžeme?</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Nabízíme komplexní financování pro širokou škálu dopravní a strojní techniky. Nezáleží na stáří vozu, ale na Vašem podnikatelském záměru.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-blue/50 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 backdrop-blur-sm">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-truck text-neon-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Tahače a návěsy</h3>
+                    <p class="text-sm text-gray-400 mb-6">Použité a nové tahače, návěsy a přívěsy všech značek. Specializujeme se na financování i starší techniky.</p>
+                    <a href="#" class="text-neon-blue text-sm font-bold flex items-center group-hover:translate-x-2 transition-transform">
+                        Mám zájem <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-purple/50 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 backdrop-blur-sm">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-truck-moving text-neon-purple text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Nákladní vozy nad 3,5t</h3>
+                    <p class="text-sm text-gray-400 mb-6">Použité i nové nákladní automobily, sklápěče, valníky. Flexibilní splátky a individuální přístup.</p>
+                    <a href="#" class="text-neon-purple text-sm font-bold flex items-center group-hover:translate-x-2 transition-transform">
+                        Mám zájem <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-blue/50 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 backdrop-blur-sm">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shuttle-van text-neon-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Dodávky a osobní auta</h3>
+                    <p class="text-sm text-gray-400 mb-6">Nová a ojetá osobní a užitková vozidla do 3,5t. Ideální pro rozvoz, kurýry a firemní flotily.</p>
+                    <a href="#" class="text-neon-blue text-sm font-bold flex items-center group-hover:translate-x-2 transition-transform">
+                        Mám zájem <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-purple/50 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 backdrop-blur-sm">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-tractor text-neon-purple text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Stroje a technika</h3>
+                    <p class="text-sm text-gray-400 mb-6">Zemědělské, lesnické a stavební stroje. Financujeme bagry, traktory i výrobní linky.</p>
+                    <a href="#" class="text-neon-purple text-sm font-bold flex items-center group-hover:translate-x-2 transition-transform">
+                        Mám zájem <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="kalkulacka" class="py-24 bg-black/40 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-orbitron font-bold mb-4">Spočítejte si <span class="text-neon-blue">svou splátku</span></h2>
+                <p class="text-gray-400">Orientační kalkulace leasingu a úvěru. Pro přesnou nabídku nás kontaktujte.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <!-- Background glow inside calculator -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-neon-blue/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Inputs -->
+                    <div class="space-y-8">
+                        <!-- Toggle Type -->
+                        <div class="flex p-1 bg-black/50 rounded-lg border border-white/10">
+                            <button id="btn-leasing" class="flex-1 py-3 rounded-md text-sm font-bold bg-neon-blue text-black transition-all">Finanční leasing</button>
+                            <button id="btn-credit" class="flex-1 py-3 rounded-md text-sm font-bold text-gray-400 hover:text-white transition-all">Úvěr</button>
+                        </div>
+
+                        <!-- Price Input -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-gray-300">Cena vozu (bez DPH)</label>
+                                <span class="font-bold text-neon-blue" id="price-display">500,000 Kč</span>
+                            </div>
+                            <input type="range" min="100000" max="5000000" step="10000" value="500000" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-neon-blue hover:accent-neon-purple transition-all" id="price-slider">
+                        </div>
+
+                        <!-- Down Payment Input -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-gray-300">Akontace</label>
+                                <span class="font-bold text-neon-blue"><span id="downpayment-percent-display">20</span>% (<span id="downpayment-value-display">100,000 Kč</span>)</span>
+                            </div>
+                            <input type="range" min="0" max="70" step="5" value="20" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-neon-blue hover:accent-neon-purple transition-all" id="downpayment-slider">
+                        </div>
+
+                        <!-- Duration Input -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-gray-300">Doba splácení</label>
+                                <span class="font-bold text-neon-blue" id="duration-display">36 měsíců</span>
+                            </div>
+                            <input type="range" min="12" max="84" step="12" value="36" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-neon-blue hover:accent-neon-purple transition-all" id="duration-slider">
+                            <div class="flex justify-between text-xs text-gray-500 mt-2">
+                                <span>12</span>
+                                <span>84</span>
+                            </div>
+                        </div>
+
+                        <!-- Residual Value (Only for Leasing usually, but kept simple or set to 0 for credit) -->
+                        <div>
+                             <div class="flex justify-between mb-2">
+                                <label class="text-sm text-gray-300">Zůstatková hodnota</label>
+                                <span class="font-bold text-neon-blue" id="residual-display">0%</span>
+                            </div>
+                            <input type="range" min="0" max="20" step="1" value="0" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-neon-blue hover:accent-neon-purple transition-all" id="residual-slider">
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="flex flex-col justify-center items-center bg-black/40 rounded-2xl border border-white/5 p-8 relative">
+                         <div class="text-center">
+                             <p class="text-gray-400 text-sm mb-2">Měsíční splátka od</p>
+                             <div class="text-5xl md:text-6xl font-orbitron font-bold text-white mb-2" id="monthly-payment">12,778</div>
+                             <div class="text-2xl text-neon-blue font-bold">Kč</div>
+                         </div>
+                         <p class="text-xs text-gray-600 mt-8 text-center max-w-xs leading-relaxed">
+                             *Uvedená kalkulace je pouze orientační. Finální nabídka podléhá schválení bonity klienta.
+                         </p>
+                         <button class="mt-8 w-full py-4 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold rounded-lg hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all transform hover:scale-105">
+                             Mám zájem o tuto splátku
+                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="postup" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-orbitron font-bold mb-12">Schválení snadno ve <span class="text-neon-purple">3 krocích</span></h2>
+
+                    <div class="space-y-12 relative">
+                        <!-- Connecting Line -->
+                        <div class="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple opacity-30"></div>
+
+                        <!-- Step 1 -->
+                        <div class="relative flex gap-6 group">
+                            <div class="w-14 h-14 rounded-full bg-dark-bg border border-neon-blue flex items-center justify-center shrink-0 z-10 group-hover:bg-neon-blue transition-colors duration-300">
+                                <i class="fas fa-check text-neon-blue group-hover:text-black transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">1. Vyberte si vozidlo</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Najděte si techniku u našeho partnera, v bazaru nebo od jiného dopravce. My se postaráme o zbytek.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex gap-6 group">
+                            <div class="w-14 h-14 rounded-full bg-dark-bg border border-neon-purple flex items-center justify-center shrink-0 z-10 group-hover:bg-neon-purple transition-colors duration-300">
+                                <i class="fas fa-phone-alt text-neon-purple group-hover:text-black transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">2. Kontaktujte nás</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Spojíme se s vámi, probereme detaily a připravíme nejlepší variantu financování a pojištění.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex gap-6 group">
+                            <div class="w-14 h-14 rounded-full bg-dark-bg border border-white flex items-center justify-center shrink-0 z-10 group-hover:bg-white transition-colors duration-300">
+                                <i class="fas fa-key text-white group-hover:text-black transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">3. Můžete vyrazit</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Po schválení a podpisu smluv odjíždíte s vybraným vozidlem bez zbytečných odkladů.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 rounded-3xl p-8 border border-white/10 backdrop-blur-md">
+                    <h3 class="text-xl font-bold mb-6 border-b border-white/10 pb-4">Návod: Jak natočit video vozidla</h3>
+                    <p class="text-gray-400 text-sm mb-6">Potřebujete nám poslat video prohlídku? Připravili jsme pro vás jednoduchý návod, jak na to.</p>
+                    <div class="aspect-video bg-black rounded-xl overflow-hidden relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop" alt="Video thumbnail" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-neon-blue/20 backdrop-blur-sm flex items-center justify-center border border-neon-blue/50 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-play text-white ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-6 py-3 border border-white/20 rounded-lg text-sm hover:bg-white/5 transition-colors">
+                        Zobrazit celý návod k natáčení
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team / Contact Section -->
+    <section id="kontakt" class="py-24 bg-gradient-to-b from-transparent to-black/80">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-orbitron font-bold mb-4">Náš <span class="text-neon-blue">tým</span></h2>
+                <p class="text-gray-400">Jsme Vám k dispozici po celé České republice.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Contact Region: Ostrovačice -->
+                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-neon-blue/30 transition-all">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-map-marker-alt text-neon-blue mr-3"></i> Ostrovačice
+                    </h3>
+                    <p class="text-xs text-gray-500 mb-6">Osvobození 293, 664 81 Ostrovačice u Brna</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">OT</div>
+                            <div>
+                                <div class="font-bold text-white">Ing. Otakar Tlaskal</div>
+                                <a href="tel:+420606769550" class="block text-neon-blue text-sm hover:underline">+420 606 769 550</a>
+                                <a href="mailto:otakartlaskal@proresale.cz" class="text-gray-400 text-xs hover:text-white">Email</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">SM</div>
+                            <div>
+                                <div class="font-bold text-white">Stanislav Mrákava</div>
+                                <a href="tel:+420725534034" class="block text-neon-blue text-sm hover:underline">+420 725 534 034</a>
+                                <a href="mailto:mrakava@proresale.cz" class="text-gray-400 text-xs hover:text-white">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Region: Hradec Králové -->
+                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-neon-purple/30 transition-all">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-map-marker-alt text-neon-purple mr-3"></i> Hradec Králové
+                    </h3>
+                    <p class="text-xs text-gray-500 mb-6">Eliščino nábřeží 280/23, 500 03 HK</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">VP</div>
+                            <div>
+                                <div class="font-bold text-white">Vladimír Pešek</div>
+                                <a href="tel:+420720049059" class="block text-neon-purple text-sm hover:underline">+420 720 049 059</a>
+                                <a href="mailto:pesek@proresale.cz" class="text-gray-400 text-xs hover:text-white">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Region: Praha -->
+                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-neon-blue/30 transition-all">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-map-marker-alt text-neon-blue mr-3"></i> Praha
+                    </h3>
+                    <p class="text-xs text-gray-500 mb-6">Pod Klaudiánkou 1174/4b, 147 00 Praha</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 font-bold">VS</div>
+                            <div>
+                                <div class="font-bold text-white">Vladimír Svoboda</div>
+                                <a href="tel:+420602755028" class="block text-neon-blue text-sm hover:underline">+420 602 755 028</a>
+                                <a href="mailto:svoboda@proresale.cz" class="text-gray-400 text-xs hover:text-white">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Form -->
+            <div class="mt-16 p-8 md:p-12 bg-white/5 border border-white/10 rounded-3xl max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Napište nám</h3>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Jméno a příjmení" class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-neon-blue outline-none transition-colors">
+                        <input type="tel" placeholder="Telefon" class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-neon-blue outline-none transition-colors">
+                    </div>
+                    <input type="email" placeholder="Email" class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-neon-blue outline-none transition-colors">
+                    <textarea placeholder="O co máte zájem?" rows="4" class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-neon-blue outline-none transition-colors"></textarea>
+                    <button class="w-full py-4 bg-neon-blue text-black font-bold rounded-lg hover:bg-white transition-colors">
+                        Odeslat poptávku <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h4 class="text-xl font-orbitron font-bold mb-6 text-white">PRO<span class="text-neon-blue">LEASE</span>KREDIT</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Moderní financování pro dopravu a průmysl. Leasing a úvěry pro rok 2026 a dále.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-neon-blue hover:text-black transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-neon-blue hover:text-black transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-neon-blue hover:text-black transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Rychlé odkazy</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-neon-blue transition-colors">Naše služby</a></li>
+                        <li><a href="#" class="hover:text-neon-blue transition-colors">Kalkulačka</a></li>
+                        <li><a href="#" class="hover:text-neon-blue transition-colors">Jak to funguje</a></li>
+                        <li><a href="#" class="hover:text-neon-blue transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><i class="fas fa-phone mr-2 text-neon-blue"></i> +420 778 799 957</li>
+                        <li><i class="fas fa-envelope mr-2 text-neon-blue"></i> info@proleasekredit.cz</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-neon-blue"></i> Pro LeaseKredit, s.r.o.<br>Pražákova 888/66b<br>639 00 Brno</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Zůstaňte v obraze</h4>
+                    <p class="text-gray-500 text-sm mb-4">Získejte nejnovější nabídky financování přímo do emailu.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Váš email" class="bg-white/5 border border-white/10 rounded-l-lg px-4 py-2 w-full text-white text-sm outline-none focus:border-neon-blue">
+                        <button class="bg-neon-blue text-black px-4 py-2 rounded-r-lg hover:bg-neon-purple hover:text-white transition-colors">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-xs text-gray-600">
+                <p>&copy; 2026 Pro LeaseKredit, s.r.o. Všechna práva vyhrazena. Design by Jules (AI Agent).</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
