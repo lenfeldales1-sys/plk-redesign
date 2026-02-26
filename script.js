@@ -120,26 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
         priceDisplay.textContent = formatCurrency(price);
         downPaymentPercentDisplay.textContent = downPaymentPercent;
 
-        const downPaymentValue = price * (1.21) * (downPaymentPercent / 100) / 1.21; // Estimate raw value relative to base price for display?
-        // Actually, the display usually shows the raw amount.
-        // Existing logic: const downPaymentValue = price * (downPaymentPercent / 100);
-        // But the new logic says "Akontace z ceny s DPH".
-        // Let's stick to the visual display showing simple percentage of the input price for now,
-        // but the calculation uses the strict "Akontace z ceny s DPH" logic.
-        // If the user inputs 500k (ex VAT), price with VAT is 605k. 20% of 605k is 121k.
-        // The old logic was: 20% of 500k = 100k.
-        // Let's update the display to be accurate to the input parameters if possible,
-        // but typically "Akontace" in UI for business loans is often % of the base price.
-        // However, the python script is explicit: "Akontace v % (z ceny vč. DPH)".
-        // So we should calculate it that way.
+        // Calculate down payment based on price with VAT as per new logic
         const priceWithVat = price * 1.21;
         const downPaymentValueCalculated = priceWithVat * (downPaymentPercent / 100);
 
-        // For the display "100 000 Kč", users usually expect to see the amount they pay.
-        // If the slider is "Cena bez DPH", and Akontace is "%", usually it refers to % of the financed amount or price.
-        // I will display the calculated down payment amount (inc VAT presumably, or whatever the user pays).
-        // Since the prompt says "Akontace... z posuvníku", and the Python script says "z ceny vč DPH",
-        // I will calculate the actual down payment amount based on the Python logic.
         downPaymentValueDisplay.textContent = formatCurrency(downPaymentValueCalculated);
 
         durationDisplay.textContent = `${duration} měsíců`;
